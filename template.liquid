@@ -1,23 +1,21 @@
-<div class="layout">
-  <div class="columns">
-    <div class="column">
-      {% if status == "in_phase" %}
-        <span class="label">Current Release</span>
-        <span class="value value--xlarge">{{ release }}</span>
-        <span class="description">Day {{ day }} of {{ total_days }} &middot; {{ days_remaining }} days left</span>
-        <span class="description">{{ start }} &rarr; {{ end }}</span>
-        {% if next_release %}
-          <span class="description">Next: {{ next_release }} starts {{ next_start }}</span>
-        {% endif %}
-      {% elsif status == "between_phases" %}
-        <span class="label">Next Release</span>
-        <span class="value value--xlarge">{{ release }}</span>
-        <span class="description">Starts in {{ days_until_start }} days ({{ start }})</span>
-      {% else %}
-        <span class="label">Release Schedule</span>
-        <span class="value">No upcoming release found</span>
+<div class="view view--full">
+  <div class="layout layout--col gap--large" style="height: 100%; justify-content: center; align-items: center; text-align: center;">
+    {% if status == "in_phase" %}
+      <span class="label label--underline">Current Release</span>
+      <span class="value value--xxlarge">{{ release }}</span>
+      <span class="description text--large">Day {{ day }} of {{ total_days }} &middot; {{ days_remaining }} days left</span>
+      <span class="description">{{ start }} &rarr; {{ end }}</span>
+      {% if next_release %}
+        <span class="description">Next: {{ next_release }} starts {{ next_start }}</span>
       {% endif %}
-    </div>
+    {% elsif status == "between_phases" %}
+      <span class="label label--underline">Next Release</span>
+      <span class="value value--xxlarge">{{ release }}</span>
+      <span class="description text--large">Starts in {{ days_until_start }} days ({{ start }})</span>
+    {% else %}
+      <span class="label">Release Schedule</span>
+      <span class="value">No upcoming release found</span>
+    {% endif %}
   </div>
 </div>
 
