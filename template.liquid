@@ -1,0 +1,27 @@
+<div class="layout">
+  <div class="columns">
+    <div class="column">
+      {% if status == "in_phase" %}
+        <span class="label">Current Release</span>
+        <span class="value value--xlarge">{{ release }}</span>
+        <span class="description">Day {{ day }} of {{ total_days }} &middot; {{ days_remaining }} days left</span>
+        <span class="description">{{ start }} &rarr; {{ end }}</span>
+        {% if next_release %}
+          <span class="description">Next: {{ next_release }} starts {{ next_start }}</span>
+        {% endif %}
+      {% elsif status == "between_phases" %}
+        <span class="label">Next Release</span>
+        <span class="value value--xlarge">{{ release }}</span>
+        <span class="description">Starts in {{ days_until_start }} days ({{ start }})</span>
+      {% else %}
+        <span class="label">Release Schedule</span>
+        <span class="value">No upcoming release found</span>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="title_bar">
+  <span class="title">Takt Release</span>
+  <span class="instance">{{ today }}</span>
+</div>
