@@ -1,8 +1,12 @@
 {
-  "status": "between_phases",
+  "status": "in_phase",
   "release": "2610",
   "start": "2026-09-21",
   "end": "2026-10-16",
-  "days_until_start": 1,
-  "today": "2026-09-20"
+  "day": 1,
+  "total_days": 26,
+  "days_remaining": 25,
+  "next_release": "2611",
+  "next_start": "2026-10-19",
+  "today": "2026-09-21"
 }
